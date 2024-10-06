@@ -1,0 +1,28 @@
+Output/Release/Obj/ble_app_template_pca10040_s132/nrf_assert.o: \
+ /home/ebenezer/Developer/aquatic-emg-sensor-main_x21ble_now_com/emg_sensor_nrf5_SDK/app/components/libraries/util/nrf_assert.c \
+ /home/ebenezer/Developer/aquatic-emg-sensor-main_x21ble_now_com/emg_sensor_nrf5_SDK/app/components/libraries/util/nrf_assert.h \
+ /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdint.h \
+ /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
+ /usr/share/segger_embedded_studio_for_arm_5.42/include/stdint.h \
+ ../../../../../../modules/nrfx/mdk/nrf.h \
+ ../../../../../../modules/nrfx/mdk/nrf52.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
+ ../../../../../../components/toolchain/cmsis/include/cmsis_version.h \
+ ../../../../../../components/toolchain/cmsis/include/cmsis_compiler.h \
+ ../../../../../../components/toolchain/cmsis/include/cmsis_gcc.h \
+ ../../../../../../components/toolchain/cmsis/include/mpu_armv7.h \
+ ../../../../../../modules/nrfx/mdk/system_nrf52.h \
+ ../../../../../../modules/nrfx/mdk/nrf52_bitfields.h \
+ ../../../../../../modules/nrfx/mdk/nrf51_to_nrf52.h \
+ ../../../../../../modules/nrfx/mdk/nrf52_name_change.h \
+ ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
+ /home/ebenezer/Developer/aquatic-emg-sensor-main_x21ble_now_com/emg_sensor_nrf5_SDK/app/components/libraries/util/app_error.h \
+ /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdio.h \
+ /usr/share/segger_embedded_studio_for_arm_5.42/include/stdio.h \
+ /usr/share/segger_embedded_studio_for_arm_5.42/include/__crossworks.h \
+ /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdbool.h \
+ /usr/share/segger_embedded_studio_for_arm_5.42/include/stdbool.h \
+ /home/ebenezer/Developer/aquatic-emg-sensor-main_x21ble_now_com/emg_sensor_nrf5_SDK/app/components/libraries/util/sdk_errors.h \
+ ../../../../../../components/softdevice/s132/headers/nrf_error.h \
+ /home/ebenezer/Developer/aquatic-emg-sensor-main_x21ble_now_com/emg_sensor_nrf5_SDK/app/components/libraries/util/nordic_common.h \
+ /home/ebenezer/Developer/aquatic-emg-sensor-main_x21ble_now_com/emg_sensor_nrf5_SDK/app/components/libraries/util/app_error_weak.h
