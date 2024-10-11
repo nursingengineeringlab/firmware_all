@@ -21,7 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "string.h"
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -64,6 +65,9 @@ static void MX_I2C1_Init(void);
 /* USER CODE BEGIN PFP */
 void tfr_byte(uint8_t data);
 void sendFrequency(double frequency);
+void setup();
+void poll_adc_values();
+void trns_adc_via_uart();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -92,9 +96,35 @@ long unsigned int freq_step_3 = 100e3; // frequency step size (Hz)
 long unsigned int freq; // frequency variable for sweep
 // long unsigned int freq = 40000000; // set inital frequency (40 MHz)
 
+// values for impedance
+uint32_t gain_v1 = 0;   // store adc values from gain1
+uint32_t phase_v1 = 0;  // store adc value from phase1
+uint32_t ecg1 = 0;	    // store ecg_value
+char uart_buffer[100];
 
 
+/*
+ * @brief setup no arguments
+ * Initialize DDS sensor
+ * Toggle LED
+ * return None
+ */
+void setup(){
 
+	// Initialize the AD9851 module.
+	pulseHigh(RESET_GPIO_Port, RESET_Pin);
+	pulseHigh(FQ_UD_GPIO_Port, FQ_UD_Pin);
+	pulseHigh(DATA_GPIO_Port, DATA_Pin);
+
+	// Toggle the LED on PC1
+	for(int i=0; i<=10; i++){
+	  HAL_GPIO_WritePin(GPIOC, PC1_LED_Pin, GPIO_PIN_SET);
+	  HAL_Delay(100); // wait for 100ms
+	  HAL_GPIO_WritePin(GPIOC, PC1_LED_Pin, GPIO_PIN_RESET);
+	  HAL_Delay(100); // wait for 100ms
+	}
+
+}
 
 
 
@@ -109,6 +139,7 @@ long unsigned int freq; // frequency variable for sweep
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+	char msg[] = "Hello, world";
 
   /* USER CODE END 1 */
 
@@ -134,18 +165,11 @@ int main(void)
   MX_USART3_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  // Initialize the AD9851 module.
-  pulseHigh(RESET_GPIO_Port, RESET_Pin);
-  pulseHigh(FQ_UD_GPIO_Port, FQ_UD_Pin);
-  pulseHigh(DATA_GPIO_Port, DATA_Pin);
 
-  // Toggle the LED on PC1
-  for(int i=0; i<=10; i++){
-	  HAL_GPIO_WritePin(GPIOC, PC1_LED_Pin, GPIO_PIN_SET);
-	  HAL_Delay(100); // wait for 100ms
-	  HAL_GPIO_WritePin(GPIOC, PC1_LED_Pin, GPIO_PIN_RESET);
-	  HAL_Delay(100); // wait for 100ms
-  }
+
+  /*Init LED on PC1 and DDS*/
+  setup();
+
 
   /* USER CODE END 2 */
 
@@ -154,17 +178,20 @@ int main(void)
   while (1)
   {
 
-	  // (1KHz to 9Khz
+	  /*
+	  // (1KHz to 9Khz)
 	  for(freq=start_freq_1; freq <= stop_freq_1; freq+=freq_step_1){
 		  sendFrequency(freq);
-		  // read inputs
+		  poll_adc_values();
+		  trns_adc_via_uart();
 		  HAL_Delay(30); // 30 ms delay
 		}
 
 	  // for (10 KHz to 100 KHz)
 	  for(freq=start_freq_2; freq <= stop_freq_2; freq+=freq_step_2){
 	    sendFrequency(freq);
-	    // read inputs
+		  poll_adc_values();
+		  trns_adc_via_uart();
 	    HAL_Delay(30); // 30 ms delay
 	  }
 
@@ -172,8 +199,13 @@ int main(void)
 	   for(freq=start_freq_3; freq <= stop_freq_3; freq+=freq_step_3){
 	      sendFrequency(freq);
 	      // read inputs
+		  poll_adc_values();
+		  trns_adc_via_uart();
 	      HAL_Delay(30); // 30 ms delay
 	    }
+
+	   */
+//	    HAL_UART_Transmit(&huart3, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
 
     /* USER CODE END WHILE */
@@ -247,13 +279,13 @@ static void MX_ADC1_Init(void)
   hadc1.Instance = ADC1;
   hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
-  hadc1.Init.ScanConvMode = DISABLE;
-  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.ScanConvMode = ENABLE;
+  hadc1.Init.ContinuousConvMode = ENABLE;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.NbrOfConversion = 3;
   hadc1.Init.DMAContinuousRequests = DISABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
@@ -266,6 +298,24 @@ static void MX_ADC1_Init(void)
   sConfig.Channel = ADC_CHANNEL_4;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_5;
+  sConfig.Rank = 2;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_6;
+  sConfig.Rank = 3;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -394,7 +444,10 @@ void tfr_byte(uint8_t data){
 	}
 }
 
-
+/*
+ * @brief SendFrequency
+ * @parameters: frequency
+ */
 void sendFrequency(double frequency){
 	 int32_t freq1 = frequency * 4294967296/AD9851_CLOCK; // note 180 MHz clock on 9851
 	  for(int b = 0; b<4; b++, freq1 >>= 8){
@@ -406,6 +459,35 @@ void sendFrequency(double frequency){
 	  pulseHigh(FQ_UD_GPIO_Port, FQ_UD_Pin); // Done! should see output
 }
 
+
+void poll_adc_values(){
+
+	// conversion for PA4
+	HAL_ADC_Start(&hadc1);
+	HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY); // wait for conversion
+	gain_v1 = HAL_ADC_GetValue(&hadc1); // get the value from channel PA4
+
+	// conversion for PA5
+	HAL_ADC_Start(&hadc1);
+	HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY); // wait for conversion
+	phase_v1 = HAL_ADC_GetValue(&hadc1); // get the value from channel PA4
+
+
+	// conversion for PA6
+	HAL_ADC_Start(&hadc1);
+	HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY); // wait for conversion
+	ecg1 = HAL_ADC_GetValue(&hadc1); // get the value from channel PA4
+
+	//HAL_Delay(100); // Delay for a 100 millisecond
+
+}
+
+void trns_adc_via_uart(){
+    snprintf(uart_buffer, sizeof(uart_buffer), "ADC1: %lu, ADC2: %lu, ECG1: %lu\r\n", gain_v1, phase_v1, ecg1);
+    // Transmit the data via UART
+    HAL_UART_Transmit(&huart3, (uint8_t*)uart_buffer, strlen(uart_buffer), HAL_MAX_DELAY);
+
+}
 
 
 /* USER CODE END 4 */
