@@ -1,14 +1,14 @@
 Output/Debug/Obj/ble_app_template_pca10040_s132/uart.o: \
- /home/ebenezer/Developer/aquatic-emg-sensor-main/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/uart.c \
- /home/ebenezer/Developer/aquatic-emg-sensor-main/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/uart.h \
+ /home/ebenezer/firmware_all/emg/aquatic-emg-sensor-main_x/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/uart.c \
+ /home/ebenezer/firmware_all/emg/aquatic-emg-sensor-main_x/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/uart.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdbool.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stdbool.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stdbool.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdint.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stdint.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stdint.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdio.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stdio.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/__crossworks.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stdio.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/__crossworks.h \
  ../../../../../../components/libraries/uart/app_uart.h \
  ../../../../../../components/libraries/util/app_util_platform.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
@@ -41,7 +41,7 @@ Output/Debug/Obj/ble_app_template_pca10040_s132/uart.o: \
  ../../../../../../integration/nrfx/nrfx_config.h ../config/sdk_config.h \
  ../../../../../../modules/nrfx/drivers/nrfx_common.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stddef.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stddef.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stddef.h \
  ../../../../../../modules/nrfx/mdk/nrf_peripherals.h \
  ../../../../../../modules/nrfx/mdk/nrf52832_peripherals.h \
  ../../../../../../integration/nrfx/nrfx_glue.h \

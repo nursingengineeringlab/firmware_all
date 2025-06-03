@@ -1,21 +1,21 @@
 Output/Debug/Obj/ble_app_template_pca10040_s132/ecg_res_algo.o: \
- /home/ebenezer/Developer/aquatic-emg-sensor-main/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/ads1292/ecg_res_algo.c \
- /home/ebenezer/Developer/aquatic-emg-sensor-main/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/ads1292/ecg_res_algo.h \
- /home/ebenezer/Developer/aquatic-emg-sensor-main/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/ads1292/ads1292r.h \
- /home/ebenezer/Developer/aquatic-emg-sensor-main/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/ads1292/platform.h \
+ /home/ebenezer/firmware_all/emg/aquatic-emg-sensor-main_x/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/ads1292/ecg_res_algo.c \
+ /home/ebenezer/firmware_all/emg/aquatic-emg-sensor-main_x/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/ads1292/ecg_res_algo.h \
+ /home/ebenezer/firmware_all/emg/aquatic-emg-sensor-main_x/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/ads1292/ads1292r.h \
+ /home/ebenezer/firmware_all/emg/aquatic-emg-sensor-main_x/emg_sensor_nrf5_SDK/app/project/ble_peripheral/ble_app_template/source/ads1292/platform.h \
  ../../../source/bsp_hw.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdint.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stdint.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stdint.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdbool.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stdbool.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stdbool.h \
  ../../../../../../integration/nrfx/legacy/nrf_drv_twi.h \
  ../../../../../../modules/nrfx/nrfx.h \
  ../../../../../../integration/nrfx/nrfx_config.h ../config/sdk_config.h \
  ../../../../../../modules/nrfx/drivers/nrfx_common.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stddef.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stddef.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/__crossworks.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stddef.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/__crossworks.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
  ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
@@ -50,7 +50,7 @@ Output/Debug/Obj/ble_app_template_pca10040_s132/ecg_res_algo.o: \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/util/app_error.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdio.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stdio.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stdio.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
@@ -85,7 +85,7 @@ Output/Debug/Obj/ble_app_template_pca10040_s132/ecg_res_algo.o: \
  ../../../../../../components/libraries/log/nrf_log.h \
  ../../../../../../components/libraries/util/sdk_common.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/string.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/string.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/string.h \
  ../../../../../../components/libraries/util/sdk_os.h \
  ../../../../../../components/libraries/util/app_util.h \
  ../../../../../../components/libraries/util/sdk_macros.h \
@@ -97,7 +97,7 @@ Output/Debug/Obj/ble_app_template_pca10040_s132/ecg_res_algo.o: \
  ../../../../../../components/libraries/log/nrf_log_backend_interface.h \
  ../../../../../../components/libraries/memobj/nrf_memobj.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdlib.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stdlib.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stdlib.h \
  ../../../../../../components/libraries/balloc/nrf_balloc.h \
  ../../../../../../components/libraries/log/nrf_log_default_backends.h \
  ../../../source/bsp_io_11.h ../../../source/device_config.h

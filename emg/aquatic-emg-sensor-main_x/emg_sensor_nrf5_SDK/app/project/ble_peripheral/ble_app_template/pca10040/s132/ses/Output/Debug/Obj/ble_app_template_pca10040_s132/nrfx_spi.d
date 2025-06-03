@@ -1,16 +1,16 @@
 Output/Debug/Obj/ble_app_template_pca10040_s132/nrfx_spi.o: \
- /home/ebenezer/Developer/aquatic-emg-sensor-main/emg_sensor_nrf5_SDK/app/modules/nrfx/drivers/src/nrfx_spi.c \
+ /home/ebenezer/firmware_all/emg/aquatic-emg-sensor-main_x/emg_sensor_nrf5_SDK/app/modules/nrfx/drivers/src/nrfx_spi.c \
  ../../../../../../modules/nrfx/nrfx.h \
  ../../../../../../integration/nrfx/nrfx_config.h ../config/sdk_config.h \
  ../../../../../../modules/nrfx/drivers/nrfx_common.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdint.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/__config \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stdint.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stdint.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stddef.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stddef.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/__crossworks.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stddef.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/__crossworks.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdbool.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stdbool.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stdbool.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
  ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
@@ -45,7 +45,7 @@ Output/Debug/Obj/ble_app_template_pca10040_s132/nrfx_spi.o: \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/util/app_error.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/stdio.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/stdio.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/stdio.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
@@ -58,13 +58,13 @@ Output/Debug/Obj/ble_app_template_pca10040_s132/nrfx_spi.o: \
  ../../../../../../modules/nrfx/drivers/nrfx_errors.h \
  ../../../../../../modules/nrfx/drivers/include/nrfx_spi.h \
  ../../../../../../modules/nrfx/hal/nrf_spi.h \
- /home/ebenezer/Developer/aquatic-emg-sensor-main/emg_sensor_nrf5_SDK/app/modules/nrfx/drivers/src/prs/nrfx_prs.h \
+ /home/ebenezer/firmware_all/emg/aquatic-emg-sensor-main_x/emg_sensor_nrf5_SDK/app/modules/nrfx/drivers/src/prs/nrfx_prs.h \
  ../../../../../../modules/nrfx/hal/nrf_gpio.h \
  ../../../../../../integration/nrfx/nrfx_log.h \
  ../../../../../../components/libraries/log/nrf_log.h \
  ../../../../../../components/libraries/util/sdk_common.h \
  /home/ebenezer/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/libcxx/include/string.h \
- /usr/share/segger_embedded_studio_for_arm_5.42/include/string.h \
+ /usr/share/segger_embedded_studio_for_arm_5.68/include/string.h \
  ../../../../../../components/libraries/util/sdk_os.h \
  ../../../../../../components/libraries/util/app_util.h \
  ../../../../../../components/libraries/util/sdk_macros.h \

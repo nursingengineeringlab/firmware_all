@@ -1,0 +1,14 @@
+../Core/Src/main.c:136:6:tfr_byte	2
+../Core/Src/main.c:146:6:sendFrequency	2
+../Core/Src/main.c:158:6:delay_us	2
+../Core/Src/main.c:166:6:setup_mux	1
+../Core/Src/main.c:185:6:setup_mux_x	5
+../Core/Src/main.c:234:5:main	3
+../Core/Src/main.c:345:6:SystemClock_Config	3
+../Core/Src/main.c:392:13:MX_ADC1_Init	3
+../Core/Src/main.c:444:13:MX_TIM2_Init	4
+../Core/Src/main.c:489:13:MX_USART3_UART_Init	2
+../Core/Src/main.c:520:13:MX_DMA_Init	1
+../Core/Src/main.c:538:13:MX_GPIO_Init	1
+../Core/Src/main.c:606:6:HAL_ADC_ConvCpltCallback	1
+../Core/Src/main.c:621:6:Error_Handler	1
